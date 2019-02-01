@@ -1,25 +1,41 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import SoundCloudFrame from "./components/SoundCloudFrame";
+import SocialMediaButton from "./components/SocialMediaButton";
+import Logo from "./assets/images/logo.png";
+import "./App.css";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="app-wrapper">
+        <div className="header-wrapper">
+          <SoundCloudFrame />
+        </div>
+        <div className="main-wrapper">
+          <img src={Logo} alt="logo" />
+          <h2>COMING SOON</h2>
+        </div>
+        <div className="footer-wrapper">
+          <div>
+            <SocialMediaButton
+              link="https://www.facebook.com/OriGNerd/"
+              icon="fab fa-facebook-f"
+            />
+            {/* Instagram */}
+            <SocialMediaButton
+              link="https://www.instagram.com/o.g_nerd/"
+              icon="fab fa-instagram"
+            />
+            {/* YouTube */}
+            <SocialMediaButton
+              link="https://www.youtube.com/watch?v=AYMewuppO0k"
+              icon="fab fa-youtube"
+            />
+          </div>
+          {/* Facebook */}
+
+          <p>&copy; OG Nerd 2019</p>
+        </div>
       </div>
     );
   }
