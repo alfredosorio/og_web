@@ -20,10 +20,6 @@
   height: 60%;
 }
 
-.main-wrapper img {
-  max-height: 65%;
-}
-
 /* Coming Soon */
 .main-wrapper h2 {
   font-family: "Nintendo NES Font";
@@ -32,8 +28,8 @@
   animation: text_flash 0.75s infinite;
 }
 
-.main-wrapper img,
-h2 {
+.main-wrapper h2 {
+  display: flex;
   margin: auto;
 }
 
