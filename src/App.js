@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SoundCloudFrame from "./components/SoundCloudFrame";
 import SocialMediaButton from "./components/SocialMediaButton";
-import Logo from "./assets/images/logo.png";
+import Logo from "./components/Logo";
 import "./App.css";
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
           <SoundCloudFrame />
         </div>
         <div className="main-wrapper">
-          <img src={Logo} alt="logo" />
+          <Logo />
           <h2>COMING SOON</h2>
         </div>
         <div className="footer-wrapper">
