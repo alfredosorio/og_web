@@ -15,11 +15,10 @@ class App extends Component {
         this.setState({
           loading: false
         }),
-      5000
+      3000
     );
   }
   render() {
-    console.log(this.state.loading);
     const { loading } = this.state;
 
     if (loading) {
@@ -41,6 +40,7 @@ class App extends Component {
         </div>
         <div className="footer-wrapper">
           <div>
+            {/* Facebook */}
             <SocialMediaButton
               link="https://www.facebook.com/OriGNerd/"
               icon="fab fa-facebook-f"
@@ -56,7 +56,6 @@ class App extends Component {
               icon="fab fa-youtube"
             />
           </div>
-          {/* Facebook */}
 
           <p>&copy; OG Nerd 2019</p>
         </div>
