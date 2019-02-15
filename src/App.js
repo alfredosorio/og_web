@@ -5,7 +5,31 @@ import Logo from "./components/Logo";
 import "./App.css";
 
 class App extends Component {
+  state = {
+    loading: true
+  };
+
+  componentDidMount() {
+    setTimeout(
+      () =>
+        this.setState({
+          loading: false
+        }),
+      5000
+    );
+  }
   render() {
+    console.log(this.state.loading);
+    const { loading } = this.state;
+
+    if (loading) {
+      return (
+        <div className="loader">
+          <h1>GET READY...</h1>
+        </div>
+      );
+    }
+
     return (
       <div className="app-wrapper">
         <div className="header-wrapper">

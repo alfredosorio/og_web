@@ -1,3 +1,18 @@
+.loader:empty {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+}
+
+.loader h1 {
+  font-family: "Nintendo NES Font";
+  font-size: 20px;
+  color: white;
+  animation: text_flash 0.2s infinite;
+}
+
 .app-wrapper {
   display: flex;
   justify-content: center;
