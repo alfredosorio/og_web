@@ -52,6 +52,8 @@ h2 {
 }
 
 .footer-wrapper p {
+  font-family: "Titillium Web";
+  letter-spacing: 2px;
   font-size: 11px;
 }
 
@@ -83,6 +85,11 @@ h2 {
 @font-face {
   font-family: "Nintendo NES Font";
   src: url("./assets/fonts/Nintendo NES Font.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Titillium Web";
+  src: url("./assets/fonts/TitilliumWeb-Regular.ttf") format("truetype");
 }
 
 /* Animations */

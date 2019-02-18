@@ -57,7 +57,7 @@ class App extends Component {
             />
           </div>
 
-          <p>&copy; OG Nerd 2019</p>
+          <p>&copy; O.G. Nerd 2019</p>
         </div>
       </div>
     );
