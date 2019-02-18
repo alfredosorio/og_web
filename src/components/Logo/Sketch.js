@@ -1,4 +1,5 @@
-import LogoImage from "../../assets/images/logo.png";
+import LogoImageMobile from "../../assets/images/logo_sml.png";
+import LogoImageDesktop from "../../assets/images/logo.png";
 
 const Sketch = p => {
   var _createClass = (function() {
@@ -24,32 +25,47 @@ const Sketch = p => {
     }
   }
 
-  var windowW = window.innerWidth / 2;
-  var windowH = window.innerHeight / 2;
+  // ------------------------------------------------------
+  if (window.innerWidth < 415 && window.innerHeight < 1025) {
+    var imgSrc = LogoImageMobile;
+    var windowW = window.innerWidth / 1.8;
+    var windowH = window.innerHeight / 1.8;
+
+    p.setup = function() {
+      p.background(0);
+      p.rectMode(p.CENTER);
+      p.createCanvas(windowW, windowH);
+      p.loadImage(imgSrc, function(img) {
+        glitch = new Glitch(img);
+        isLoaded = true;
+      });
+    };
+    console.log("Mobile Resolution Detected");
+  }
+
+  if (window.innerWidth > 415) {
+    var imgSrc = LogoImageDesktop;
+    var windowW = window.innerWidth / 2;
+    var windowH = window.innerHeight / 1.8;
+
+    p.setup = function() {
+      p.background(0);
+      p.rectMode(p.CENTER);
+      p.createCanvas(windowW, windowH);
+      p.loadImage(imgSrc, function(img) {
+        glitch = new Glitch(img);
+        isLoaded = true;
+      });
+    };
+    console.log("Desktop Resolution Detected");
+  }
+
+  // ------------------------------------------------------
 
   var isLoaded = false;
   var glitch = void 0;
-  var imgSrc = LogoImage;
-
-  p.setup = function() {
-    p.background(0);
-    // p.rectMode(p.CENTER);
-    p.createCanvas(windowW, windowH);
-    p.loadImage(imgSrc, function(img) {
-      glitch = new Glitch(img);
-      isLoaded = true;
-    });
-  };
 
   p.draw = function() {
-    // p.fill(255, 0, 0);
-    // p.rect(0, 0, p.width / 2, p.height / 2);
-    // p.fill(0, 255, 0);
-    // p.rect(p.width / 2, 0, p.width / 2, p.height / 2);
-    // p.fill(0, 0, 255);
-    // p.rect(0, p.height / 2, p.width / 2, p.height / 2);
-    // p.fill(255, 255, 0);
-    // p.rect(p.width / 2, p.height / 2, p.width / 2, p.height / 2);
     p.clear();
     p.background(0);
     if (isLoaded) {
