@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SoundCloudFrame from "./components/SoundCloudFrame";
 import SocialMediaButton from "./components/SocialMediaButton";
-import Logo from "./components/Logo";
+import Logo from "./components/Logo/Logo";
 import "./App.css";
 
 class App extends Component {
