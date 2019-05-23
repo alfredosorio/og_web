@@ -64,6 +64,11 @@ h3 {
   color: white;
 }
 
+.gif {
+  height: 80px;
+  transform: skewY(-4deg);
+}
+
 /* Fonts */
 @font-face {
   font-family: "Nintendo NES Font";
@@ -106,5 +111,9 @@ h3 {
 
   .social-media-wrapper a {
     padding: 30px;
+  }
+
+  .gif {
+    height: 120px;
   }
 }

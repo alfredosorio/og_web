@@ -3,6 +3,7 @@ import SoundCloudFrame from "./components/SoundCloudFrame";
 import SocialMediaButton from "./components/SocialMediaButton";
 import Logo from "./components/Logo/Logo";
 import "./App.css";
+import Gif from "./assets/images/south_park_star_wars.gif";
 
 class App extends Component {
   state = {
@@ -35,13 +36,13 @@ class App extends Component {
   render() {
     const { loading } = this.state;
 
-    if (loading) {
-      return (
-        <div className="loader">
-          <h1>GET READY...</h1>
-        </div>
-      );
-    }
+    // if (loading) {
+    //   return (
+    //     <div className="loader">
+    //       <h1>GET READY...</h1>
+    //     </div>
+    //   );
+    // }
 
     const countDownTimer = () => {
       // Set the date we're counting down to
@@ -93,6 +94,7 @@ class App extends Component {
               <br />
               @o.g_nerd - {formatNumber(this.state.followers)} followers
             </h3>
+            <img className="gif" src={Gif} alt="GIF" />
           </div>
         </div>
         <div className="footer-wrapper">
