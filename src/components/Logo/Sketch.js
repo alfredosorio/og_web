@@ -28,8 +28,8 @@ const Sketch = p => {
   // ------------------------------------------------------
   if (window.innerWidth < 415 && window.innerHeight < 1025) {
     var imgSrc = LogoImageMobile;
-    var windowW = window.innerWidth / 1.8;
-    var windowH = window.innerHeight / 1.8;
+    var windowW = window.innerWidth / 1.5;
+    var windowH = window.innerHeight / 1.5;
 
     p.setup = function() {
       p.background(0);

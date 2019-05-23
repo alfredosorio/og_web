@@ -3,7 +3,6 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  height: 80vh;
   font-family: "Nintendo NES Font";
   font-size: 10px;
   color: white;
@@ -11,39 +10,34 @@
 }
 
 .app-wrapper {
-  display: flex;
-  justify-content: center;
   flex-direction: column;
   text-align: center;
-  height: 100vh;
 }
 
-/* HEADER */
-.header-wrapper {
-  height: 20%;
-}
-
-/* MAIN */
-.main-wrapper {
-  height: 60%;
+/* LOGO */
+.logo {
 }
 
 /* Coming Soon */
 .main-wrapper h2 {
   font-family: "Nintendo NES Font";
-  font-size: 20px;
+  font-size: 15px;
   color: white;
+}
+
+.flash {
   animation: text_flash 0.75s infinite;
 }
 
 .main-wrapper h2 {
-  display: flex;
-  margin: auto;
+  padding: 10px;
 }
 
 /* FOOTER */
 .footer-wrapper {
-  height: 20%;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
   color: white;
 }
 
@@ -53,28 +47,13 @@
   font-size: 11px;
 }
 
-.social-media-button {
-  display: inline;
+.social-media-wrapper {
   font-size: 1.5em;
-  padding: 16px;
 }
 
-.social-media-button a {
+.social-media-wrapper a {
+  padding: 30px 10px;
   color: white;
-}
-
-/* SHARED */
-.header-wrapper,
-.main-wrapper,
-.footer-wrapper {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.main-wrapper,
-.footer-wrapper {
-  justify-content: center;
 }
 
 /* Fonts */
@@ -103,4 +82,9 @@
     opacity: 0;
   }
 }
-/* TO DO: Set max-width for desktop resolutions */
+
+@media screen and (min-width: 416px) {
+  .main-wrapper h2 {
+    font-size: 25px;
+  }
+}
