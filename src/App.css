@@ -1,5 +1,5 @@
 h3 {
-  color: BLACK;
+  color: black;
   font-family: "Titillium Web";
   font-size: 16px;
   background-color: white;
@@ -12,11 +12,10 @@ h3 {
   height: 80vh;
   flex-direction: column;
   text-align: center;
-  font-family: "Nintendo NES Font";
+  font-family: "Street Fighter 4";
   font-size: 10px;
   color: white;
   animation: text_flash 0.1s infinite;
-  letter-spacing: 4px;
 }
 
 .app-wrapper {
@@ -78,6 +77,11 @@ h3 {
 @font-face {
   font-family: "Titillium Web";
   src: url("./assets/fonts/TitilliumWeb-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Street Fighter 4";
+  src: url("./assets/fonts/ssf4.ttf") format("truetype");
 }
 
 /* Animations */

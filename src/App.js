@@ -36,13 +36,13 @@ class App extends Component {
   render() {
     const { loading } = this.state;
 
-    // if (loading) {
-    //   return (
-    //     <div className="loader">
-    //       <h1>GET READY...</h1>
-    //     </div>
-    //   );
-    // }
+    if (loading) {
+      return (
+        <div className="loader">
+          <h1>Now Loading</h1>
+        </div>
+      );
+    }
 
     const countDownTimer = () => {
       // Set the date we're counting down to
