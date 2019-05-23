@@ -1,21 +1,27 @@
+h3 {
+  color: BLACK;
+  font-family: "Titillium Web";
+  font-size: 16px;
+  background-color: white;
+  transform: skewY(-4deg);
+}
+
 .loader {
   display: flex;
   justify-content: center;
+  height: 80vh;
   flex-direction: column;
   text-align: center;
   font-family: "Nintendo NES Font";
   font-size: 10px;
   color: white;
   animation: text_flash 0.1s infinite;
+  letter-spacing: 4px;
 }
 
 .app-wrapper {
   flex-direction: column;
   text-align: center;
-}
-
-/* LOGO */
-.logo {
 }
 
 /* Coming Soon */
@@ -30,7 +36,8 @@
 }
 
 .main-wrapper h2 {
-  padding: 10px;
+  padding: 5px;
+  letter-spacing: 6px;
 }
 
 /* FOOTER */
@@ -39,6 +46,7 @@
   width: 100%;
   bottom: 0;
   color: white;
+  padding-bottom: 0;
 }
 
 .footer-wrapper p {
@@ -52,7 +60,7 @@
 }
 
 .social-media-wrapper a {
-  padding: 30px 10px;
+  padding: 10px;
   color: white;
 }
 
@@ -84,7 +92,19 @@
 }
 
 @media screen and (min-width: 416px) {
+  h3 {
+    font-size: 20px;
+  }
+
   .main-wrapper h2 {
-    font-size: 25px;
+    font-size: 23px;
+  }
+
+  .footer-wrapper {
+    padding-bottom: 100px;
+  }
+
+  .social-media-wrapper a {
+    padding: 30px;
   }
 }

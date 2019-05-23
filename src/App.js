@@ -6,7 +6,8 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    loading: true
+    loading: true,
+    followers: 0
   };
 
   componentDidMount() {
@@ -17,6 +18,18 @@ class App extends Component {
         }),
       3000
     );
+
+    fetch(
+      "https://api.instagram.com/v1/users/self?access_token=4747502952.1677ed0.8e1da9dbd1c84de2bcf9b6cc53800484"
+    )
+      .then(results => {
+        return results.json();
+      })
+      .then(data => {
+        this.setState({
+          followers: data.data.counts.followed_by
+        });
+      });
   }
 
   render() {
@@ -57,9 +70,15 @@ class App extends Component {
         // If the count down is finished, write some text
         if (distance < 0) {
           clearInterval(x);
-          document.getElementById("timer").innerHTML = "EXPIRED";
+          document.getElementById("timer").innerHTML = "DEPLOYING...";
         }
       }, 1000);
+    };
+
+    const formatNumber = num => {
+      var num_parts = num.toString().split(".");
+      num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return num_parts.join(".");
     };
 
     return (
@@ -67,7 +86,14 @@ class App extends Component {
         <div className="main-wrapper">
           <Logo />
           <h2 className="flash">COMING SOON</h2>
-          <h2 id="timer">{countDownTimer()}</h2>
+          {/* <h2 id="timer">{countDownTimer()}</h2> */}
+          <div style={{ paddingTop: "10px" }}>
+            <h3>
+              We're almost at 4K followers on Instagram!
+              <br />
+              @o.g_nerd - {formatNumber(this.state.followers)} followers
+            </h3>
+          </div>
         </div>
         <div className="footer-wrapper">
           <SocialMediaButton />
