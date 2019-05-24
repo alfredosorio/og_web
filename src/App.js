@@ -3,12 +3,14 @@ import SoundCloudFrame from "./components/SoundCloudFrame";
 import SocialMediaButton from "./components/SocialMediaButton";
 import Logo from "./components/Logo/Logo";
 import "./App.css";
-import Gif from "./assets/images/south_park_star_wars.gif";
+import Audio from "./assets/magicword.mp3";
+import Gif from "./assets/images/jurassic_park.gif";
 
 class App extends Component {
   state = {
     loading: true,
-    followers: 0
+    followers: 0,
+    virus: false
   };
 
   componentDidMount() {
@@ -36,13 +38,13 @@ class App extends Component {
   render() {
     const { loading } = this.state;
 
-    if (loading) {
-      return (
-        <div className="loader">
-          <h1>Now Loading</h1>
-        </div>
-      );
-    }
+    // if (loading) {
+    //   return (
+    //     <div className="loader">
+    //       <h1>Now Loading</h1>
+    //     </div>
+    //   );
+    // }
 
     // const countDownTimer = () => {
     //   // Set the date we're counting down to
@@ -82,27 +84,67 @@ class App extends Component {
       return num_parts.join(".");
     };
 
+    let myAudio = document.getElementById("myAudio");
+
+    const playAudio = e => {
+      myAudio.play();
+
+      this.setState({
+        virus: !this.state.virus
+      });
+    };
+
+    const clearVirus = e => {
+      myAudio.pause();
+      this.setState({
+        virus: false
+      });
+    };
+
+    console.log(
+      this.state.virus ? "Get Fucked!" : "Your are clean of all diseases"
+    );
+
     return (
-      <div className="app-wrapper">
-        <div className="main-wrapper">
-          <Logo />
-          <h2 className="flash">COMING SOON</h2>
-          {/* <h2 id="timer">{countDownTimer()}</h2> */}
-          <div style={{ paddingTop: "10px" }}>
-            <h3>
-              {this.state.followers <= 3999
-                ? "We're almost at "
-                : "We've reached over "}
-              4K followers on Instagram!
-              <br />
-              @o.g_nerd - {formatNumber(this.state.followers)} followers
-            </h3>
-            <img className="gif" src={Gif} alt="GIF" />
-          </div>
+      <div>
+        <div>
+          <img
+            onClick={e => clearVirus(e)}
+            className={`${
+              this.state.virus === true ? "virusImage" : "virusImage--hidden"
+            }`}
+            src={Gif}
+            alt="Newman"
+          />
         </div>
-        <div className="footer-wrapper">
-          <SocialMediaButton />
-          <p>&copy; O.G. Nerd 2019</p>
+        <div className="app-wrapper">
+          <audio id="myAudio" loop controls>
+            <source src={Audio} type="audio/mpeg" />
+          </audio>
+          <div className="main-wrapper">
+            <Logo />
+            <h2 className="flash">COMING SOON</h2>
+            {/* <h2 id="timer">{countDownTimer()}</h2> */}
+            <div style={{ paddingTop: "10px" }}>
+              <h3>
+                {this.state.followers <= 3999
+                  ? "We're almost at "
+                  : "We've reached over "}
+                4K followers on Instagram!
+                <br />
+                @o.g_nerd - {formatNumber(this.state.followers)} followers
+              </h3>
+              <button onClick={e => playAudio(e)}>
+                PRESS to <br />
+                Execute Order 66{" "}
+              </button>
+              {/* <img className="gif" src={Gif} alt="GIF" /> */}
+            </div>
+          </div>
+          <div className="footer-wrapper">
+            <SocialMediaButton />
+            <p>&copy; O.G. Nerd 2019</p>
+          </div>
         </div>
       </div>
     );
